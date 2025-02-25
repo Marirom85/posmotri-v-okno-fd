@@ -264,7 +264,7 @@ ol {
   background-color: #fff;
   width: 15px;
   height: 15px;
-  position: absolute;
+  position: relative;
   border: 1px solid #fff;
   top: 50%;
   left: 50%;

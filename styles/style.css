@@ -9,11 +9,12 @@ html {
 }
 
 .page {
+  display: flex;
+  justify-content: center;
   inline-size: 1200px;
-  block-size: 100%;
   margin: auto;
   color: #fff;
-  font-family: 'Fira Sans Condensed', sans-serif;
+  font-family: "Fira Sans Condensed", sans-serif;
   font-size: 18px;
   background-color: #1b1919;
 }
@@ -47,5 +48,312 @@ ol {
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background-color: #D9D9D9;
+  background-color: #d9d9d9;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 711px 399px;
+  grid-template-areas: "result details";
+  justify-content: center;
+  place-items: end;
+  gap: 30px;
+  inline-size: 1140px;
+}
+
+.result {
+  grid-area: result;
+}
+
+.result__video-container {
+  position: relative;
+  width: 711px;
+  height: 386px;
+  margin-bottom: 16px;
+}
+
+.result__video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.content__details {
+  grid-area: details;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  gap: 26px;
+}
+
+.content__list-container {
+  overflow-y: auto;
+  max-height: 298px;
+}
+
+.content__list {
+  display: grid;
+  width: inherit;
+}
+
+.content__video-card {
+  display: flex;
+  align-items: flex-start;
+}
+
+.content__video-card-thumbnail {
+  width: 194px;
+  height: 103px;
+  overflow: hidden;
+}
+
+.content__video-card-thumbnail img {
+  width: 100%; /* Ширина изображения */
+  height: 100%; /* Высота изображения */
+  object-fit: cover; /* Изображение будет закрывать весь элемент */
+  object-position: center; /* Выравниваем изображение по цент*/
+}
+
+.content__video-card-description-container {
+  flex-grow: 1; /* Элемент будет занимать всё доступное пространство */
+  /*padding-left: 10px; /* Отступ слева */
+}
+.search-form {
+  display: flex;
+  justify-content: space-between; /* Пропорционально распределяем свободное пространство между элементами .search-form */
+  align-items: flex-start; /* Прижимаем элементы .search-form к началу контейнера */
+  gap: 40px;
+}
+
+.search-form__fieldset {
+  border: none;
+  font-family: "Fira Sans Condensed";
+}
+
+.search-form__fieldset-title {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 21.6px;
+  color: #ffffff;
+  margin-bottom: 5px;
+}
+
+.title {
+  font-family: Oswald;
+  font-weight: 700;
+  font-size: 75px;
+  line-height: 70.5px;
+  letter-spacing: 0%;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.content__accent {
+  color: #545050;
+}
+
+.content__card-link {
+  text-decoration: none;
+  color: #ffffff;
+  cursor: pointer;
+  display: block;
+  outline: none;
+  height: 103px;
+  margin-bottom: 30px;
+}
+
+.content__video-card-title {
+  margin-block-end: 6px;
+  width: 196px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-transform: uppercase;
+  font-family: Oswald;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 30px;
+}
+
+.content__video-card-description {
+  display: -webkit-box;
+  -webkit-line-clamp: 4; /* Количество строк, после которых текст будет обрезан */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  width: 196px;
+  height: 103px;
+  text-overflow: ellipsis;
+  font-family: "Fira Sans Condensed";
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 16.2px;
+  margin-top: 6px;
+}
+
+.visually-hidden {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.search-form__checkbox-list {
+  display: flex;
+  gap: 15px; /* Отступы между чекбоксами */
+  width: 212px;
+  height: 22px;
+  justify-content: space-between;
+}
+
+.search-form__label {
+  display: flex;
+  width: fit-content; /* Ширина элемента подстраивается под его содержимое */
+  cursor: pointer;
+}
+
+.search-form__textfield {
+  border: none;
+  width: 225px;
+  height: 27px;
+  border-top: 1px solid #fff; /* Верхняя граница */
+  border-bottom: 1px solid #fff; /* Нижняя граница */
+  border-right: 1px solid transparent;
+  border-left: 1px solid transparent;
+  font-family: inherit; /*  наследуем шрифта */
+  font-size: inherit; /* наследуем размер шрифта */
+  color: #fff; /* Цвет шрифта */
+  background-color: transparent; /* Цвет фона */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none; /* Сброс стилей по умолчанию для разных браузеров */
+}
+
+.search-form__textfield::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.search-form__textfield:active {
+  border-right-color: #fff;
+  border-left-color: #fff;
+}
+
+.search-form__textfield:focus {
+  outline: none;
+}
+
+.search-form__checkbox {
+  outline: none;
+}
+
+.search-form__pseudo-checkbox {
+  position: relative;
+  border: 1px solid #fff; /* Стиль границы */
+  position: relative; /* Относительное позиционирование для псевдоэлемента */
+  cursor: pointer;
+  width: 19px;
+  height: 19px;
+  margin-right: 5px;
+}
+
+.search-form__pseudo-checkbox::after {
+  content: "";
+  background-color: #fff;
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  border: 1px solid #fff;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none; /* Скрываем псевдоэлемент*/
+}
+
+.search-form__pseudo-checkbox:checked::after {
+  display: block; /* Отображаем псевдоэлемент при активации чекбокса */
+  text-decoration: none;
+}
+
+.search-form__label:active .search-form__pseudo-checkbox::after {
+  display: block;
+  text-decoration: none;
+}
+
+.search-form__label:hover:has(.search-form__checkbox) {
+  text-decoration: underline; /* Добавляем подчёркивание при наведении */
+}
+
+.search-form__label:focus-visible {
+  outline: 1px solid #ffffff;
+  outline-offset: 2px;
+}
+
+/* Кнопки */
+.button {
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  font-family: "Fira Sans Condensed";
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 21.5px;
+  background-color: transparent; /* Прозрачный фон */
+  cursor: pointer; /* Курсор в виде руки */
+  padding: 6px 0px; /* Отступы внутри кнопки */
+  text-decoration: none;
+  outline: none;
+}
+
+.search-form__submit-button {
+  /* Индивидуальные стили для кнопки «Найти» */
+  align-self: end;
+  width: 194px;
+  height: 34px;
+  margin-left: auto; /* Положение в конце контейнера */
+}
+
+.more-button {
+  /* Индивидуальные стили для кнопки «Показать ещё» */
+  width: 100%;
+  height: 34px;
+}
+
+button:hover {
+  text-decoration: underline; /* Подчёркивание при наведении */
+}
+
+.button:active {
+  background-color: #545050;
+}
+
+.button:focus-visible {
+  outline: 1px solid #ffffff; /* Обводка для кнопки в фокусе */
+  outline-offset: 2px;
+}
+
+/* Карточки */
+.content__list-item {
+  display: block;
+  outline: none;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+.content__card-link_current:active {
+  background-color: #545050; /* Фон для активной карточки */
+}
+
+.content__card-link:hover {
+  text-decoration: underline; /* Подчёркивание при наведении */
+}
+
+.content__card-link:focus {
+  outline: none; /* Сброс обводки для состояния :focus */
+}
+
+.content__card-link:focus-visible {
+  outline: 1px solid #ffffff; /* Обводка для состояния :focus-visible */
+  outline-offset: 2px;
 }

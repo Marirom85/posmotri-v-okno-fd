@@ -11,8 +11,10 @@ html {
 .page {
   display: flex;
   justify-content: center;
-  inline-size: 1200px;
-  margin: 133px 30px;
+  align-items: center;
+  width: 100%; /* Ширина элемента */
+  height: 100vh; /* Высота элемента в 100% от высоты видимой области браузера */
+  margin: auto;
   color: #fff;
   font-family: "Fira Sans Condensed", sans-serif;
   font-size: 18px;
@@ -58,7 +60,7 @@ ol {
   justify-content: center;
   place-items: end;
   gap: 30px;
-  inline-size: 1140px;
+  inline-size: 1140px 534px;
 }
 
 .result {

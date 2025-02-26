@@ -273,7 +273,7 @@ ol {
 }*/
 
 .search-form__label:active .search-form__pseudo-checkbox::after {
-  display: block;
+  display: block; /* Отображаем псевдоэлемент при активации чекбокса */
   text-decoration: none;
 }
 

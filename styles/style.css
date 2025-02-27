@@ -346,3 +346,6 @@ ol {
   background-color: #545050; /* Фон для активной карточки */
 }
 
+.content__card-link_current {
+  background-color: #545050;
+}

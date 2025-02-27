@@ -98,8 +98,9 @@ ol {
 }
 
 .content__list {
-  display: grid;
+  display: flex;
   width: inherit;
+  flex-direction: column;
   gap: 30px;
 }
 
@@ -117,8 +118,7 @@ ol {
 }
 
 .content__video-card-description-container {
-  flex-grow: 1; /* Элемент будет занимать всё доступное пространство */
-  
+  flex-grow: 1; /* Элемент будет занимать всё доступное пространство */ 
 }
 
 .search-form {
@@ -250,31 +250,23 @@ ol {
 
 .search-form__pseudo-checkbox {
   border: 1px solid #fff; /* Стиль границы */
-  position: relative; /* Относительное позиционирование для псевдоэлемента */
   cursor: pointer;
   width: 19px;
   height: 19px;
   margin-right: 5px;
+  display: block;
+  justify-content: center;
+  align-items: center;
 }
 
-.search-form__pseudo-checkbox::after {
+.search-form__checkbox:checked + .search-form__pseudo-checkbox::after {
   content: "";
   background-color: #fff;
+  position: relative;
   width: 15px;
   height: 15px;
-  position: relative;
+  display: block;
   border: 1px solid #fff;
-  display: none; /* Скрываем псевдоэлемент*/
-}
-
-/*.search-form__pseudo-checkbox:checked::after {
-  display: block; /* Отображаем псевдоэлемент при активации чекбокса */
-  /*text-decoration: none;
-}*/
-
-.search-form__label:active .search-form__pseudo-checkbox::after {
-  display: block; /* Отображаем псевдоэлемент при активации чекбокса */
-  text-decoration: none;
 }
 
 .search-form__label:hover:has(.search-form__checkbox) {
@@ -311,8 +303,9 @@ ol {
 
 .more-button {
   /* Индивидуальные стили для кнопки «Показать ещё» */
-  width: 100%;
+  width: calc(100% - 6px);
   height: 34px;
+  margin: 30px 3px 0;
 }
 
 button:hover {
@@ -331,9 +324,8 @@ button:hover {
 /* Карточки */
 .content__list-item {
   display: block;
-  outline: none;
-  padding-left: 2px;
-  padding-right: 2px;
+  padding-left: 3px;
+  padding-right: 3px;
 }
 
 .content__card-link_current:active {
@@ -350,6 +342,6 @@ button:hover {
 
 .content__card-link:focus-visible {
   outline: 1px solid #ffffff; /* Обводка для состояния :focus-visible */
-  outline-offset: 2px;
+  outline-offset: 1px;
 }
 

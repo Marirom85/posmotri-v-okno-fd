@@ -267,6 +267,7 @@ ol {
   height: 15px;
   display: block;
   border: 1px solid #fff;
+  margin: 1px;
 }
 
 .search-form__label:hover:has(.search-form__checkbox) {
@@ -308,12 +309,12 @@ ol {
   margin: 30px 3px 0;
 }
 
-button:hover {
+.button:hover {
   text-decoration: underline; /* Подчёркивание при наведении */
 }
 
 .button:active {
-  background-color: #545050;
+  background-color: #545050; /* фон активной кнопки */
 }
 
 .button:focus-visible {
@@ -328,10 +329,6 @@ button:hover {
   padding-right: 3px;
 }
 
-.content__card-link_current:active {
-  background-color: #545050; /* Фон для активной карточки */
-}
-
 .content__card-link:hover {
   text-decoration: underline; /* Подчёркивание при наведении */
 }
@@ -343,5 +340,9 @@ button:hover {
 .content__card-link:focus-visible {
   outline: 1px solid #ffffff; /* Обводка для состояния :focus-visible */
   outline-offset: 1px;
+}
+
+.content__card-link:active {
+  background-color: #545050; /* Фон для активной карточки */
 }
 

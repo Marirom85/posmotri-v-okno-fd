@@ -118,7 +118,7 @@ ol {
 }
 
 .content__video-card-description-container {
-  flex-grow: 1; /* Элемент будет занимать всё доступное пространство */ 
+  flex-grow: 1;
 }
 
 .search-form {
